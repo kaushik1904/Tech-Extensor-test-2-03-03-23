@@ -1,0 +1,33 @@
+<div class="mx-auto my-5 col-10 shadow-lg p-3 mb-5 bg-white rounded">
+  <input class="form-check-input" type="checkbox" (click)="onClick()" />
+  <label class="form-check-label"> Virtual Program </label>
+  &nbsp;
+  <!-- virtual programs -->
+  <mat-form-field>
+    <mat-label>Virtual Programs</mat-label>
+    <mat-select
+      [(value)]="selectedVirtualProgram"
+      multiple
+      (selectionChange)="selectOnProgram($event)"
+    >
+      <mat-option value="selectedVirtualProgram">Select All</mat-option>
+      <mat-option
+        *ngFor="let option of virtualProgramOptions"
+        [value]="option.programId"
+        >{{ option.programName }}</mat-option
+      >
+    </mat-select>
+  </mat-form-field>
+  &nbsp;
+  <!-- virtual projects -->
+  <mat-form-field>
+    <mat-label>Virtual Projects</mat-label>
+    <mat-select multiple>
+      <mat-option
+        *ngFor="let option of selectedProjects"
+        [value]="option.projectID"
+        >{{ option.projectName }}</mat-option
+      >
+    </mat-select>
+  </mat-form-field>
+</div>
