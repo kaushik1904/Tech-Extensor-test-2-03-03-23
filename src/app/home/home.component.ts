@@ -50,13 +50,11 @@ export class HomeComponent {
           index
         );
       });
-    debugger;
 
     console.log(this.selectedProjects);
   }
 
   selectOnProject(program: MatSelectChange) {
-    debugger;
     this.selectedVirtualProject = program.value;
     console.log(program.value);
   }
